@@ -1,1 +1,1 @@
-MacPlex - A alternative Plex App for Mac
+# MacPlex - A alternative Plex App for Mac
