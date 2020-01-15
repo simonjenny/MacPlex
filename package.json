@@ -22,6 +22,7 @@
   "dependencies": {
     "electron-aspectratio": "^1.0.1",
     "electron-positioner": "^4.1.0",
-    "electron-widevinecdm": "5.0.2"
+    "electron-widevinecdm": "5.0.2",
+    "lodash": ">=4.17.12"
   }
 }
