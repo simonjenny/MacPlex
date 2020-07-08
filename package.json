@@ -5,13 +5,13 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "build": "build -m"
+    "build": "node_modules/.bin/electron-builder -m"
   },
   "author": "Simon Jenny",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^4.2.4",
-    "electron-builder": "^20.43.0"
+    "electron": "latest",
+    "electron-builder": "latest"
   },
   "build": {
     "appId": "dev.simonjenny.MacPlex",
@@ -20,9 +20,8 @@
     }
   },
   "dependencies": {
-    "electron-aspectratio": "^1.0.1",
-    "electron-positioner": "^4.1.0",
-    "electron-widevinecdm": "5.0.2",
+    "electron-aspectratio": ">=1.0.1",
+    "electron-positioner": ">=4.1.0",
     "lodash": ">=4.17.12"
   }
 }

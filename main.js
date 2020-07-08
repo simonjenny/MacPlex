@@ -10,16 +10,6 @@ let path = require('path')
 let url = require('url')
 var positioner;
 
-function getWidevineCdmPluginPath() {
-  return path.join(app.getPath('home'), "/Applications/WidevineCdm/darwin_x64/_platform_specific/mac_x64");
-}
-
-let widevineCdmPluginPath = getWidevineCdmPluginPath();
-console.log(`widevine-cdm-path: ${widevineCdmPluginPath}\n`);
-
-app.commandLine.appendSwitch("widevine-cdm-path", widevineCdmPluginPath);
-app.commandLine.appendSwitch("widevine-cdm-version", "4.10.1303.2");
-
 let mainWindow
 
 function createWindow() {
