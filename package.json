@@ -5,7 +5,7 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "build": "node_modules/.bin/electron-builder -m"
+    "build": "node_modules/.bin/electron-builder -m -w"
   },
   "author": "Simon Jenny",
   "license": "CC0-1.0",
@@ -17,7 +17,8 @@
     "appId": "dev.simonjenny.MacPlex",
     "mac": {
       "darkModeSupport": true
-    }
+    },
+    "win" : {}
   },
   "dependencies": {
     "electron-aspectratio": ">=1.0.1",
