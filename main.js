@@ -6,8 +6,6 @@ const {
 } = require('electron')
 
 let aspect = require("electron-aspectratio");
-let path = require('path')
-let url = require('url')
 var positioner;
 
 let mainWindow
