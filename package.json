@@ -18,7 +18,7 @@
     "mac": {
       "darkModeSupport": true
     },
-    "win" : {}
+    "win": {}
   },
   "dependencies": {
     "electron-aspectratio": ">=1.0.1",
