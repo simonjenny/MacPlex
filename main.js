@@ -1,19 +1,26 @@
-const Positioner = require('electron-positioner')
+const Positioner  = require('electron-positioner')
+const StateKeeper = require('electron-window-state');
 const {
   app,
   BrowserWindow,
   Menu
 } = require('electron')
 
-let aspect = require("electron-aspectratio");
-var positioner;
+let positioner, mainWindow
 
-let mainWindow
 
 function createWindow() {
+
+  let WindowState = StateKeeper({
+    defaultWidth: 1280,
+    defaultHeight: 720
+  });
+
   mainWindow = new BrowserWindow({
-    width: 1280,
-    height: 720,
+    x: WindowState.x,
+    y: WindowState.y,
+    width: WindowState.width,
+    height: WindowState.height,
     show: false,
     frame: true,
     alwaysOnTop: true,
@@ -24,15 +31,13 @@ function createWindow() {
       nodeIntegration: false,
     }
   })
+
   mainWindow.setIgnoreMouseEvents(false)
   mainWindow.once('ready-to-show', () => {
     positioner = new Positioner(mainWindow)
-    positioner.move('center')
+    WindowState.manage(mainWindow);
     mainWindow.show()
   })
-
-  mainWindowHandler = new aspect(mainWindow);
-  mainWindowHandler.setRatio(16, 9, 10);
 
   var template = [{
       label: "Application",
@@ -87,6 +92,17 @@ function createWindow() {
             mainWindow.setAlwaysOnTop(!mainWindow.isAlwaysOnTop())
           }
         },
+      
+        {
+          type: 'checkbox',
+          accelerator: "Command+L",
+          checked: !mainWindow.resizable,
+          label: "Lock Size",
+          click: function() {
+            mainWindow.resizable = !mainWindow.resizable
+          }
+        },
+
         {
           label: 'Size',
           submenu: [{

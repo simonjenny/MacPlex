@@ -1,13 +1,13 @@
 {
-  "name": "MacPlex",
-  "version": "1.1.0",
+  "name": "macplex",
+  "version": "1.1.1",
   "description": "MacPlex - A alternative Plex App for Mac",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "build": "node_modules/.bin/electron-builder -m -w"
+    "build": "node_modules/.bin/electron-builder -lwm"
   },
-  "author": "Simon Jenny",
+  "author": "Simon Jenny <simon.jenny@me.com>",
   "license": "CC0-1.0",
   "devDependencies": {
     "electron": "latest",
@@ -18,10 +18,16 @@
     "mac": {
       "darkModeSupport": true
     },
-    "win": {}
+    "linux": {
+      "target": "deb"
+    },
+    "win": {
+      "target": "nsis"
+    }
   },
   "dependencies": {
     "electron-aspectratio": ">=1.0.1",
-    "electron-positioner": ">=4.1.0"
+    "electron-positioner": ">=4.1.0",
+    "electron-window-state": "^5.0.3"
   }
 }
