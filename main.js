@@ -1,5 +1,8 @@
 const Positioner  = require('electron-positioner')
 const StateKeeper = require('electron-window-state');
+const isReachable = require('is-reachable');
+
+
 const {
   app,
   BrowserWindow,
@@ -164,7 +167,13 @@ function createWindow() {
   ];
 
   Menu.setApplicationMenu(Menu.buildFromTemplate(template));
-  mainWindow.loadURL('https://app.plex.tv/desktop');
+
+  (async () => {
+
+    let url = (await isReachable('http://192.168.192.2:32400')) ? "http://192.168.192.2:32400/web/index.html" : "https://app.plex.tv/desktop"
+    mainWindow.loadURL(url);
+
+  })();
 
   mainWindow.webContents.on('did-finish-load', () => {
     mainWindow.webContents.insertCSS(`

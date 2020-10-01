@@ -5,7 +5,7 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "build-local": "node_modules/.bin/electron-builder -lwm"
+    "build-local": "node_modules/.bin/electron-builder -l"
   },
   "author": "Simon Jenny <simon.jenny@me.com>",
   "license": "CC0-1.0",
@@ -30,6 +30,7 @@
   "dependencies": {
     "electron-aspectratio": ">=1.0.1",
     "electron-positioner": ">=4.1.0",
-    "electron-window-state": "^5.0.3"
+    "electron-window-state": "^5.0.3",
+    "is-reachable": "^4.0.0"
   }
 }
