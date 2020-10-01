@@ -1,6 +1,6 @@
 {
   "name": "macplex",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "MacPlex - A alternative Plex App for Mac",
   "main": "main.js",
   "scripts": {
